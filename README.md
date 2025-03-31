@@ -6,12 +6,13 @@
 <ol>
   <li><strong>Prometheus </strong></li>
   
-  ![Prometheus Logo](./prometheus_logo.png){ style="display: block; margin: auto;" }
-
+  <p align="center">
+  <img src="prometheus_logo.png" alt="Prometheus Logo" width="300">
+  </p>
   <strong>Prometheus</strong> là một bộ công cụ mã nguồn mở dành cho giám sát hệ thống và cảnh báo. <strong>Prometheus</strong> thu thập và lưu trữ dữ liệu dưới dạng chuỗi thời gian, tức là mỗi thông tin về số liệu (<strong>metrics</strong>) sẽ được lưu kèm theo dấu thời gian ghi nhận, cùng với các cặp khóa - giá trị (<strong> labels</strong>) tùy chọn. 
   <li><strong>Grafana</strong></li>
 
-  ![Grafana Logo](./grafana_prometheus.png){ style="display: block; margin: auto;" }
+  ![Grafana Logo](./grafana_prometheus.png){style="display: block; margin: auto;" }
   ![Example Chart](./example_chart.png){ style="display: block; margin: auto;" }
 
   <strong>Grafana</strong> là một visualizer thể hiện các metrics thu thập từ nhiều nguồn như <strong>Prometheus</strong>, <strong>InfluxDB</strong>, <strong>Elasticsearch</strong>, <strong>MySQL</strong>, <strong>PostgreSQL</strong>,...dưới dạng các biểu đồ (<strong>chart</strong>) hoặc đồ thị (<strong>grap</strong>), được tập hợp lại thành dashboard có tính tùy biến cao, giúp dễ dàng theo dõi trạng thái của các node (<strong>CPU, RAM, DISK,...</strong>), trạng thái và thông tin về các dịch vụ (<strong>Nginx, OpenVPN, K8s, K3s</strong>),...
