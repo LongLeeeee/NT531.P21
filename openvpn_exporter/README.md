@@ -1,6 +1,22 @@
 ### OpenVPN Exporter
 <strong>OpenVPN Exporter</strong> dành cho <strong>Prometheus</strong> là một dự án mã nguồn mở trên GitHub (hiện đang được lưu trữ) dự án Kumina’s openvpn-exporter.
 
+### Quick start
+```sh
+git clone https://github.com/LongLeeeee/NT531.P21/blob/main/openvpn_exporter/openvpn_exporter_install.sh
+chmod +x openvpn_exporter_install.sh
+./openvpn_exporter_install.sh
+```
+Khi thực thi đến file main.go, hãy thay thế <strong>openvpnStatusPaths</strong> bằng dòng bên dưới.
+```sh
+  openvpnStatusPaths = flag.String("openvpn.status_paths", "/var/log/openvpn/openvpn-status.log", "Paths at which OpenVPN places its status files.")
+```
+Kế đến khi đến file server.conf hãy thêm vào câu bên dưới.
+```sh
+status /var/log/openvpn/openvpn-status.log
+log /var/log/openvpn/openvpn.log
+```
+
 ### Triển khai
 <ol>
   <li>
@@ -123,6 +139,16 @@
   ```sh
   cd /etc/openvpn/server
   sudo nano server.conf
+  ```
+  Sau đó chèn câu lệnh bên dưới vào.
+  ```sh
+  status /var/log/openvpn/openvpn-status.log
+  log /var/log/openvpn/openvpn.log
+  ```
+  Cấp quyền cho dịch vụ có thể truy cập đến các file của OpenVPN
+  
+  ```sh
+  sudo chmod -R 755 /var/log/openvpn/
   ```
   Khởi chạy OpenVPN Exporter 
   ```sh
