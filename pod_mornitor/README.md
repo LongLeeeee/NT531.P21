@@ -6,7 +6,7 @@
 ### Quick Start
 
 ```sh
-https://github.com/LongLeeeee/NT531.P21/blob/main/pod_mornitor/kube_state_metric_install.sh
+wget https://github.com/LongLeeeee/NT531.P21/blob/main/pod_mornitor/kube_state_metric_install.sh
 chmod +x kube_state_metric_install.sh
 ```
 
