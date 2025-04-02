@@ -1,9 +1,14 @@
 ### Cài đặt kube-state-metric bằng Helm
 
 #### Yêu cầu: Kubernetes và Helm
-[Kubernetes](https://kubernetes.io/) là nền tảng điều phối container tự động triển khai, mở rộng và quản lí các ứng dụng được đóng gói. [Helm] (https://helm.sh/) là một trình quản lí packet cho Kubernetes giúp đơn giản hóa việc quản lí các ứng dụng Kubernetes.
+[Kubernetes](https://kubernetes.io/) là nền tảng điều phối container tự động triển khai, mở rộng và quản lí các ứng dụng được đóng gói. [Helm](https://helm.sh/) là một trình quản lí packet cho Kubernetes giúp đơn giản hóa việc quản lí các ứng dụng Kubernetes.
 
 ### Quick Start
+
+```sh
+https://github.com/LongLeeeee/NT531.P21/blob/main/pod_mornitor/kube_state_metric_install.sh
+chmod +x kube_state_metric_install.sh
+```
 
 ### Triển khai kube-state-metric
 Thêm repository Prometheus Community và Helm để cài đặt các Helm Chart.
