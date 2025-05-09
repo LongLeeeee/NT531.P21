@@ -1,0 +1,50 @@
+groups:
+  - name: node
+    rules:
+
+    - alert: HighCPUUsage
+      expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle", job="prometheus"}[1m])) * 100) > 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High CPU usage on {{$labels.instance}}"
+        description: "{{ $labels.instance }} has a CPU usage of {{ $value }}% for more than 1 minutes"
+
+    - alert: HighRAMUsage
+      expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100 > 10
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High RAM usage on {{ $labels.instance }}"
+        description: "{{ $labels.instance }} has a RAM usage of {{ $value }}% for more than 1 minutes"
+
+    - alert: HighDiskUsage
+      expr: node_filesystem_avail_bytes / node_filesystem_size_bytes * 100 < 5
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High disk usage on {{ $labels.instance }} ({{ $labels.device }})"
+        description: "{{ $labels.instance }} has a disk usage of {{ $value }}% for more than 1 minutes on device {{ $labels.device }}"
+
+    - alert: NodeDown
+      expr: up == 0
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        title: "Node {{ $labels.instance }} is down"
+        description: "Failed to scrape {{ $labels.job }} on {{ $labels.instance }} for more than 1 minutes. Node seems down."
+  - name: openvpn
+    rules:
+    - alert: HighClientConnected
+      expr: openvpn_server_connected_clients > 0
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        summary: "Number of connected clients is too high on {{$labels.instance}}"
+        description: "{{ $labels.instance }} have {{$value}} connected clients for more than 1 minutes"
+
