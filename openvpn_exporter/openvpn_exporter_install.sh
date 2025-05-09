@@ -46,5 +46,6 @@ sudo nano server.conf
 
 echo "You has updatea server.conf file. Countinue excuting...."
 
+sudo chmod -R 755 /var/log/openvpn/
 sudo systemctl restart openvpn-server@server
 curl http://localhost:9176/metrics

@@ -1,6 +1,7 @@
 ### OpenVPN Exporter
 <strong>OpenVPN Exporter</strong> dành cho <strong>Prometheus</strong> là một dự án mã nguồn mở trên GitHub (hiện đang được lưu trữ) dự án Kumina’s openvpn-exporter.
 
+*Lưu ý: Đã cài đặt OpenVPN thành công thì mới tiếp tục cài OpenVPN ExporterExporter
 ### Quick start
 ```sh
 git clone https://github.com/LongLeeeee/NT531.P21/blob/main/openvpn_exporter/openvpn_exporter_install.sh
@@ -202,3 +203,9 @@ process_start_time_seconds 1.7421305415e+09
 ...
 ```
 </ol>
+
+### Unstall OpenVPN Exporter
+```sh
+wget https://github.com/LongLeeeee/NT531.P21/blob/main/openvpn_exporter/openvpn_exporter_uninstall.sh
+chmod +x openvpn_export_uninstall.sh
+```
