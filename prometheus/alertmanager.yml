@@ -10,9 +10,9 @@ route:
 receivers:
   - name: "telegram"
     telegram_configs:
-      - bot_token: "token"
+      - bot_token: "7518225317:AAGburFciFSDRLttpyiXngNyJX4WNaYLW_w"
         api_url: https://api.telegram.org
-        chat_id: id
+        chat_id: 5416946881
         message: '{{ template "telegram.yucca.message" . }}'
 
 templates:

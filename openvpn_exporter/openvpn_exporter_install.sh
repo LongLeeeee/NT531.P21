@@ -1,8 +1,8 @@
 #!/bin/bash
 curl -s https://go.dev/VERSION?m=text | head -n 1 > VER
 VER=$(cat VER)
-wget https://golang.org/dl/go${VER}.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go${VER}.linux-amd64.tar.gz
+wget https://golang.org/dl/${VER}.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf ${VER}.linux-amd64.tar.gz
 
 if ! grep -q '/usr/local/go/bin' /etc/environment; then
     echo 'PATH="$PATH:/usr/local/go/bin"' | sudo tee -a /etc/environment > /dev/null
@@ -41,8 +41,7 @@ WantedBy=multi-user.target
 EOF
 
 sudo systemctl daemon-reload
-cd /etc/openvpn/server
-sudo nano server.conf
+sudo nano /etc/openvpn/server/server.conf
 
 echo "You has updatea server.conf file. Countinue excuting...."
 
